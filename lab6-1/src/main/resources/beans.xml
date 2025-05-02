@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="product1" class="dto.Product" scope="prototype">
+        <property name="id" value="1" />
+        <property name="name" value="Product One" />
+        <property name="price" value="100.0" />
+        <property name="description" value="This is the first product." />
+    </bean>
+    <bean id="product2" class="dto.Product" scope="prototype">
+        <constructor-arg value="2" />
+        <constructor-arg value="Product Two" />
+        <constructor-arg value="200.0" />
+        <constructor-arg value="This is the second product." />
+    </bean>
+
+    <!-- Bean 3: Configured as singleton with property tags -->
+    <bean id="product3" class="dto.Product" scope="singleton">
+        <property name="id" value="3" />
+        <property name="name" value="Product Three" />
+        <property name="price" value="300.0" />
+        <property name="description" value="This is the third product." />
+    </bean>
+</beans>
